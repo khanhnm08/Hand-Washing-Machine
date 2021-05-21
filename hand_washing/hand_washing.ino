@@ -4,6 +4,7 @@ const uint8_t potPin = 2;
 int timeDelay = 0;
 
 void setup() {
+  Serial.begin(9600);
   pinMode(pumpPin, OUTPUT);
   digitalWrite(pumpPin, LOW);
   pinMode(interruptPin, INPUT_PULLUP);
@@ -12,12 +13,13 @@ void setup() {
 }
 
 void loop() {
-//   int a = analogRead(potPin);
+//   int a = analogRead(A1);
 //   timeDelay = map(a,0,1023,100,2000);
+//   Serial.println(timeDelay);
 }
 
 void blink() {
     digitalWrite(pumpPin, HIGH);
-    delay(20);
+    delay(80);
     digitalWrite(pumpPin, LOW);
 }
