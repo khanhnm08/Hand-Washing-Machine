@@ -1,7 +1,9 @@
 const uint8_t pumpPin = 0;
 const uint8_t interruptPin = 1;
 const uint8_t potPin = 2;
-int timeDelay = 0;
+unsigned long previousMillis = 0;
+unsigned long currentMillis = 0;
+volatile uint8_t state = LOW;
 
 void setup() {
   Serial.begin(9600);
@@ -13,13 +15,13 @@ void setup() {
 }
 
 void loop() {
-//   int a = analogRead(A1);
-//   timeDelay = map(a,0,1023,100,2000);
-//   Serial.println(timeDelay);
+    //digitalWrite(pumpPin, state);
 }
 
-void blink() {
+void blink()
+{
+
     digitalWrite(pumpPin, HIGH);
-    delay(80);
+    delay(800);
     digitalWrite(pumpPin, LOW);
 }
